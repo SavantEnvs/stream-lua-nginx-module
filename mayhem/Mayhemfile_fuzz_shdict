@@ -1,0 +1,10 @@
+project: savantenvs/stream-lua-nginx-module
+target: fuzz_shdict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_shdict/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_shdict
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_shdict/fuzz_shdict.dict
+    timeout: 30
